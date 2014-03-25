@@ -185,14 +185,14 @@ shell. Below is a list of all variables/functions/aliases created by `bics`
 
 ### Global Variables
 
-- `BASHER_VERSION` - the version of `bics` when it was sourced
-- `BASHER_SOURCED` - an array of relative filenames that were sourced by `bics`
+- `BICS_VERSION` - the version of `bics` when it was sourced
+- `BICS_SOURCED` - an array of relative filenames that were sourced by `bics`
 
 example
 
-    $ echo "$BASHER_VERSION"
+    $ echo "$BICS_VERSION"
     v0.0.5
-    $ printf '%s\n' "${BASHER_SOURCED[@]}"
+    $ printf '%s\n' "${BICS_SOURCED[@]}"
     bash-analysis/analysis.bash
     bash-cdstack/cdstack.bash
     bash-dvorak/dvorak.bash
