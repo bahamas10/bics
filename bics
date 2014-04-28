@@ -62,7 +62,7 @@ if (return 2>/dev/null); then
 fi
 
 sourceurl='https://raw.githubusercontent.com/bahamas10/bics/master/bics'
-wikiurl='https://raw.githubusercontent.com/wiki/bahamas10/bics/plugins.md'
+wikiurl='https://raw.githubusercontent.com/wiki/bahamas10/bics/Plugins.md'
 
 # Limit the number of columns printed
 limitcolumns() {
