@@ -21,7 +21,7 @@ Installation
 
 You can install `bics` locally by running the following one-liner
 
-    bash <(curl -sS https://raw.github.com/bahamas10/bics/master/bics) init
+    bash <(curl -sS https://raw.githubusercontent.com/bahamas10/bics/master/bics) init
 
 Running this again after `bics` is installed will upgrade `bics` to the
 latest version from GitHub.
@@ -250,7 +250,7 @@ If `name` is empty, all plugins are updated
 You can update `bics` itself at anytime by running
 
     $ bics upgrade
-    > getting source from https://github.com/bahamas10/bics/raw/master/bics... done
+    > getting source from https://githubusercontent.com/bahamas10/bics/raw/master/bics... done
 
 Dependencies
 ------------

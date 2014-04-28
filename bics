@@ -8,7 +8,7 @@
 # Date: 9/24/2013
 # License: MIT
 
-BICS_VERSION='v0.0.0'
+BICS_VERSION='v0.0.1'
 BICS_SOURCED=()
 
 # bics initialization function, called when bics is sourced
