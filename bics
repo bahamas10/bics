@@ -61,8 +61,8 @@ if (return 2>/dev/null); then
 	return
 fi
 
-sourceurl='https://raw.github.com/bahamas10/bics/master/bics'
-wikiurl='https://raw.github.com/wiki/bahamas10/bics/plugins.md'
+sourceurl='https://raw.githubusercontent.com/bahamas10/bics/master/bics'
+wikiurl='https://raw.githubusercontent.com/wiki/bahamas10/bics/plugins.md'
 
 # Limit the number of columns printed
 limitcolumns() {
