@@ -75,16 +75,9 @@ Notice that `ls` is an alias for `list`
 ### Installing Plugins
 
 Plugins are installed to `~/.bics/plugins` as directories that contain 1 or more
-`.bash` files.  See [Plugins](#plugins) below to learn more about how plugins
-are published online and made available for download.  For now, let's just install
-a simple plugin that is on GitHub.
+`.bash` files.  Let's install a simple plugin that is on GitHub.
 
-First, we search for it
-
-    $ bics search cdstack
-    cdstack          Store the last X directories visited using cd in bash   https://github.com/bahamas10/bash-cdstack   Dave Eddy       MIT
-
-Then, to install this plugin, we run
+To install this plugin we run:
 
     $ bics install https://github.com/bahamas10/bash-cdstack
     Cloning into 'bash-cdstack'...
@@ -93,15 +86,15 @@ Then, to install this plugin, we run
     remote: Total 8 (delta 2), reused 8 (delta 2)
     Unpacking objects: 100% (8/8), done.
 
-This is a shorthand way of running
+This is a shorthand way of running:
 
     cd ~/.bics/plugins && git clone https://github.com/bahamas10/bash-cdstack
 
-And that's it! The plugin is installed, you can start using it by running
+And that's it! The plugin is installed, you can start using it by running:
 
     exec bash
 
-to reload the bash environment
+... to reload the bash environment
 
 You can list installed plugins to see that `cdstack` is present
 
@@ -135,17 +128,6 @@ for the command line, create a `.txt` file
 Plugins
 -------
 
-The official list of plugins will be kept in the wiki
-
-https://github.com/bahamas10/bics/wiki/Plugins
-
-And you can also view this by running `bics available`
-
-    $ bics available
-    Name             Description                                        Repository      Author          License
-    ---              ---                                                ---             ---             ---
-    test             something long and descriptive goes here           http://test     Dave Eddy       MIT
-
 <a name="creating-a-plugin" />
 
 ### Creating a Plugin
@@ -175,12 +157,12 @@ initially and symlink the plugins directory accordingly.
 https://github.com/bahamas10/dotfiles/commit/50cd7a236069cf98eacf170b2d6629e814075fb8
 
 **NOTE:** if you use this method, `bics install` and `bics update` will not
-work as expected, you'll need to manage the plugins manually with `git`
+work as expected, you'll need to manage the plugins manually with `git`.
 
 Environment
 -----------
 
-`bics` tries not to clutter up your namespace, or clobber variables in your
+`bics` tries not to clutter up your namespace or clobber variables in your
 shell. Below is a list of all variables/functions/aliases created by `bics`
 
 ### Global Variables
@@ -188,15 +170,14 @@ shell. Below is a list of all variables/functions/aliases created by `bics`
 - `BICS_VERSION` - the version of `bics` when it was sourced
 - `BICS_SOURCED` - an array of relative filenames that were sourced by `bics`
 
-example
+example:
 
     $ echo "$BICS_VERSION"
     v0.0.5
     $ printf '%s\n' "${BICS_SOURCED[@]}"
-    bash-analysis/analysis.bash
-    bash-cdstack/cdstack.bash
-    bash-dvorak/dvorak.bash
-
+    /home/dave/.bics/plugins/bash-analysis/analysis.bash
+    /home/dave/.bics/plugins/bash-cdstack/cdstack.bash
+    /home/dave/.bics/plugins/bash-dvorak/dvorak.bash
 
 ### Exported Variables
 
@@ -220,9 +201,9 @@ example
 
 ``` bash
 _() {
-  local i=0
-  local foo=bar
-  echo "$foo" > "/tmp/something.$i"
+    local i=0
+    local foo=bar
+    echo "$foo" > "/tmp/something.$i"
 }
 _
 ```
@@ -249,37 +230,27 @@ If `name` is empty, all plugins are updated
 
 You can update `bics` itself at anytime by running
 
-    $ bics upgrade
+    $ bics self-upgrade
     > getting source from https://githubusercontent.com/bahamas10/bics/raw/master/bics... done
 
 Dependencies
 ------------
 
-`bics` doesn't require any external programs to source plugins
-that are already installed, however some of the extra features require
-various programs to be installed.
-
-### `curl`
-
-Required for the one-liner installation, as well as `bics upgrade`, `bics search`
-and `bics available`
-
-### `grep`
-
-Required for `bics search` and `bics available`.  Note that GNU `grep` is
-not required, any version should suffice.
-
-### `awk`
-
-Required for `bics search` and `bics avaliable`.  Note that GNU `awk` is
-not required, any version should suffice.
+`bics` doesn't require any external programs to source plugins that are already
+installed, however some of the extra features require various programs to be
+installed.
 
 ### `git`
 
 Required for `bics install` and `bics update`.  The only operations done are
 `git clone` and `git pull` respectively.
 
+### `tput`
+
+Required for `bics help` and `bics init` to colorize output - will silently fail
+if not found.
+
 License
 -------
 
-MIT
+MIT License
