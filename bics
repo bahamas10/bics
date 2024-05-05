@@ -119,7 +119,7 @@ init() {
 
 	if [[ ! -d ~/.bics ]]; then
 		mkdir -p ~/.bics/plugins/test-plugin
-		echo "> ${green}~/.bics$rest created"
+		echo "> ${green}~/.bics$rst created"
 
 		echo '# add code here' > ~/.bics/plugins/test-plugin/test-plugin.bash
 		echo 'this plugin does nothing' > ~/.bics/plugins/test-plugin/help.txt
