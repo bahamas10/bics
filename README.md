@@ -4,18 +4,6 @@ bics - Bash Interactive Configuration System
 A modular framework for interactive bash plugin management
 without overcomplicating your `.bashrc`
 
-- [Installation](#installation)
-- [Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Installing Plugins](#installing-plugins)
-- [Plugins](#plugins)
-  - [Creating a Plugin](#creating-a-plugin)
-  - [Managing Plugins](#managing-plugins)
-- [Environment](#environment)
-- [Updates](#updates)
-- [Dependencies](#dependencies)
-- [License](#license)
-
 Installation
 ------------
 
@@ -28,8 +16,6 @@ latest version from GitHub.
 
 Getting Started
 ---------------
-
-<a name="setup" />
 
 ### Setup
 
@@ -69,8 +55,6 @@ Now, when you list the installed plugins you'll see nothing
     $
 
 Notice that `ls` is an alias for `list`
-
-<a name="installing-plugins" />
 
 ### Installing Plugins
 
@@ -125,10 +109,19 @@ finds, the order is:
 So if you create a plugin and would like to include a help text specifically
 for the command line, create a `.txt` file
 
+---
+
+Here is a list of plugins Dave wrote for bics:
+
+- [bash-cdstack](https://www.github.com/bahamas10/bash-cdstack)
+- [bash-analysis](https://www.github.com/bahamas10/bash-analysis)
+- [bash-dvorak](https://www.github.com/bahamas10/bash-dvorak)
+- [bash-interactivity](https://www.github.com/bahamas10/bash-interactivity)
+- [bash-path](https://www.github.com/bahamas10/bash-path)
+- [tabstop](https://www.github.com/bahamas10/tabstop)
+
 Plugins
 -------
-
-<a name="creating-a-plugin" />
 
 ### Creating a Plugin
 
@@ -141,8 +134,6 @@ Ideally, plugins will each have their own repository here on GitHub, and
 can be stored in a users dotfiles repository as git submodules.
 
 An example real-world plugin can be seen here https://github.com/bahamas10/bash-cdstack
-
-<a name="managing-plugins" />
 
 ### Managing Plugins
 
