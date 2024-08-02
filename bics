@@ -8,7 +8,7 @@
 # Date: 9/24/2013
 # License: MIT
 
-BICS_VERSION='v0.1.0'
+BICS_VERSION='v0.1.1'
 BICS_SOURCED=()
 
 # bics initialization function, called when bics is sourced
@@ -16,6 +16,7 @@ _() {
 	local f
 	for f in ~/.bics/plugins/*/*.bash; do
 		[[ -f $f ]] || continue
+		# shellcheck disable=SC1090
 		. "$f" && BICS_SOURCED+=("$f")
 	done
 }
@@ -72,11 +73,13 @@ fi
 SOURCE_URL='https://raw.githubusercontent.com/bahamas10/bics/master/bics'
 
 usage() {
-	local rst=$(tput sgr0 2>/dev/null)
-	local green=$(tput setaf 2 2>/dev/null)
+	local rst green
+	rst=$(tput sgr0 2>/dev/null)
+	green=$(tput setaf 2 2>/dev/null)
 
 	cat <<-EOF
-	${green}bics$rst - Bash Interactive Configuration Management ($BICS_VERSION)
+	${green}bics$rst - Bash Interactive Configuration Management \
+($BICS_VERSION)
 	Usage: bics [command] [args...]
 
 	Subcommands:
@@ -114,15 +117,17 @@ list() {
 }
 
 init() {
-	local rst=$(tput sgr0 2>/dev/null)
-	local green=$(tput setaf 2 2>/dev/null)
+	local rst green
+	rst=$(tput sgr0 2>/dev/null)
+	green=$(tput setaf 2 2>/dev/null)
 
 	if [[ ! -d ~/.bics ]]; then
-		mkdir -p ~/.bics/plugins/test-plugin
+		local dir=~/.bics/plugins/test-plugin
+		mkdir -p "$dir"
 		echo "> ${green}~/.bics$rst created"
 
-		echo '# add code here' > ~/.bics/plugins/test-plugin/test-plugin.bash
-		echo 'this plugin does nothing' > ~/.bics/plugins/test-plugin/help.txt
+		echo '# add code here' > "$dir/test-plugin.bash"
+		echo 'this plugin does nothing' > "$dir/help.txt"
 		echo '> test-plugin created'
 	fi
 

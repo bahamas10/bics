@@ -241,6 +241,18 @@ Required for `bics install` and `bics update`.  The only operations done are
 Required for `bics help` and `bics init` to colorize output - will silently fail
 if not found.
 
+Pull Requests
+-------------
+
+Any code submitted should pass the syntax check:
+
+    $ make check
+    expand bics | awk 'length($0) > 80 { exit(1); }'
+    ./bics -h | expand |  awk 'length($0) > 80 { exit(1); }'
+    shellcheck bics
+
+Bash style guide: https://github.com/bahamas10/bash-style-guide
+
 License
 -------
 
